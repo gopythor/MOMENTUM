@@ -6,7 +6,7 @@ let savedApiKey = localStorage.getItem(API_KEY);
 if (savedApiKey === null || savedApiKey === "null" || savedApiKey.length !== 32) {
   let apiKey = prompt("Please write OpenWeather Key", "5316b0c6aa14b11aebf545883b68e63b");
   localStorage.setItem(API_KEY, apiKey);
-  savedApiKey = localStorage.getItem(API_KEY);
+  savedApiKey = apiKey;
 }
 
 function onGeoOk(position) {
