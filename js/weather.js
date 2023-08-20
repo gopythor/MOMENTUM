@@ -1,12 +1,12 @@
 const weather = document.querySelector("#weather span:nth-child(2)");
 const city = document.querySelector("#weather span:last-child");
 const API_KEY = "apikey";
-const savedApiKey = localStorage.getItem(API_KEY);
+let savedApiKey = localStorage.getItem(API_KEY);
 
 if (savedApiKey === null || savedApiKey === "null" || savedApiKey.length !== 32) {
-  console.log("why?");
   let apiKey = prompt("Please write OpenWeather Key", "5316b0c6aa14b11aebf545883b68e63b");
   localStorage.setItem(API_KEY, apiKey);
+  savedApiKey = localStorage.getItem(API_KEY);
 }
 
 function onGeoOk(position) {
